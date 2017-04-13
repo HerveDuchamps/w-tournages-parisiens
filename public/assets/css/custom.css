@@ -1,0 +1,164 @@
+/*_________________________________________________Préréglages________________________________________________*/
+
+/*Carte provisoire à supprimer par la suite*/
+#map {
+    width: 110%;
+    height: 700px;
+    margin: 0;
+    padding: 0;
+}
+/*Fin de la carte provisoire*/
+
+a {
+    color: #515052;
+    text-decoration: none;
+}
+
+h1{
+    text-align: center;
+    font-size: 1em;
+    font-style: italic;
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    line-height: 25px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    margin:0;
+    padding: 20px;
+    border:0;
+    outline:0;
+}
+
+h3 {
+    padding: 15px 0px 0px 0px;
+    text-align: center;
+    margin: 0;
+}
+
+h4 {
+    text-align: center;
+    line-height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+/*_________________________________________________Navigation________________________________________________*/
+
+.navbar {
+    background-color: #F2F4F3;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+
+}
+
+.navbar-brand {
+    float: left;
+    height: 75px;
+    padding: 0px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.navbar-brand > img {
+    float: left;
+    height: 100%;
+    width: auto;
+    padding-left: 25px; 
+}
+
+.navbar-btn {
+    margin-left:25px;
+    margin-right:25px;
+    margin-top:25px;
+    margin-bottom:25px;
+    position: fixed; 
+    right: 25px;
+}
+
+.custom-nav {
+    background-color: #1C0B19;
+    height: 25px;
+    color: #F2F4F3;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb {
+    background-color: #F2F4F3;
+    height: 25px;
+    color: #F2F4F3;
+    margin: 0;
+    padding: 0 0 0 25px;
+    line-height: 25px;
+}
+
+/*_________________________________________________Footer________________________________________________*/
+
+footer {
+    background-color: D5DFE5;
+    width: 100%;
+    bottom: 0;
+}
+
+/*_________________________________________________Carousel et thumbnails________________________________________________*/
+
+.carousel{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.carousel-indicators .active{
+    background-color: #1C0B19 ;
+}
+
+.carousel-indicators li{
+    background-color: #515052;
+}
+
+.thumbnail{
+    margin-bottom: 55px;
+}
+
+/*_________________________________________________Fiche________________________________________________*/
+
+.parentAffiche img {
+   max-width: 100%;
+}
+
+.parentDescription p {
+   max-width: 100%;
+   padding: 10px;
+   text-align: center;
+}
+
+.parentYoutube img {
+   max-width: 100%;
+   padding: 10px;
+}
+
+.parentPortrait img {
+   max-width: 100%;
+}
+
+.btn-custom{
+    margin-top: 20px;
+}
+
+/*formulaire de recherche*/
+form{
+    margin-top: 150px;
+}
+
+
+
+
+
+
