@@ -8,6 +8,7 @@ var map;
                 type: "POST",
                 success: function (reponse){
                     TraitementMaps(reponse);//Une fois qu'il récupère les données => il va appelé le Traitement (Maps)
+                    TraitementGeoloc(reponse);
                 }
             })
                      //Traitement Google Maps
@@ -72,5 +73,37 @@ var map;
             *Création des clusters 
             *Ils prennent 3 paramètres la map(voir la ligne 26), markers(l'ensembles des marquers il s'agit     d'un tableau(voir la ligne 36)) et l'emplacemnt de l'image là il s'agit d'un lien des photos de    google. 
             */
+          }
+          
+          //Traitement pour la goélocalisation:
+          function TraitementGeoloc(reponse) {
+
+            var infoWindow = new google.maps.InfoWindow({map: map});
+
+            // Try HTML5 geolocation.
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function(position) {
+              var pos = {
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude
+                };
+
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('Location found.');
+                map.setCenter(pos);
+              }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+              });
+            } else {
+              // Browser doesn't support Geolocation
+              handleLocationError(false, infoWindow, map.getCenter());
             }
+        
+          function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                  'Error: The Geolocation service failed.' :
+                  'Error: Your browser doesn\'t support geolocation.');
+            }
+          }
         }
