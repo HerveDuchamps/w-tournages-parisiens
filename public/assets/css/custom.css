@@ -1,5 +1,9 @@
 /*_________________________________________________Préréglages________________________________________________*/
 
+body {
+    margin-top: 110px;
+}
+
 /*Carte provisoire à supprimer par la suite*/
 #map {
     width: 110%;
