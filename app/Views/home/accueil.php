@@ -12,7 +12,7 @@
 
         <!-- Début de la section -->
         <section>
-            <h2>Propositions de parcours à la noix</h2>
+            <h2>Propositions de parcours</h2>
             <div class="container">
                 <div class="row">
                     <!-- Carousel Bootstrap -->
