@@ -143,6 +143,9 @@
         </section>
 
 
+        <!--script pour le menu-->
+        <script src="<?= $this->assetUrl("js/scriptMenu.js"); ?>"></script>
+
    <!--________________________ Traitement Pour la google Maps ________________________-->
         
     <script src="<?= $this->assetUrl("js/scriptMaps.js"); ?>"></script>
