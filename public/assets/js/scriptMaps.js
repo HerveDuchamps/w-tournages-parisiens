@@ -1,17 +1,22 @@
-var map;
+          var map;
           var Mikeclose = 0;
           var markers = ["n"];
+          var Bouchra = 0;
           function initMap() {// ! \\ on doit appeler cette fonction dans la balise <script> calback(voir la ligne 51)
             var myLatLng = {lat: 48.862908, lng: 2.33717}
+            var myUrl = (Mike != 0)?"http://localhost/tournages-parisiens/public/api/lieu/film" : "http://localhost/tournages-parisiens/public/api/lieu";
+           var MikeData = (Mike != 0)? "film="+Mike:"";
             $.ajax({
-                url: "http://localhost/tournages-parisiens/public/api/lieu",
+                //url: "http://localhost/tournages-parisiens/public/api/lieu",
+                url: myUrl,
                 type: "POST",
+                data: MikeData,
                 success: function (reponse){
                     TraitementMaps(reponse);//Une fois qu'il récupère les données => il va appelé le Traitement (Maps)
                     TraitementGeoloc(reponse);
                 }
             })
-                     //Traitement Google Maps
+                    //Traitement Google Maps
             function TraitementMaps(reponse) {
               var resultat = reponse; //Transformer l'objet php en fichier json 
 
@@ -28,7 +33,7 @@ var map;
              
                
               for(var i=0; i < resultat.length; i++){//boucle pour afficher tous les marquers
-                if(i == 150)break;
+                if(i == 200)break;
 
                 var res = resultat[i].geo_coordinates.split(",");
                

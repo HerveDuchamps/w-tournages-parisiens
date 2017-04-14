@@ -107,10 +107,10 @@
                         <li>
                             <a href="#" class="titre">Titre</a>                           
                             <div data-role="panel" id="titre" data-display="titre" style="display:none"> 
-                                <form class="ui-filterable" action="<?= $this->url('fiche_detaillee'); ?>" method="GET">
+                                <form class="ui-filterable" action="<?= $this->url('fiche_detaillee'); ?>" method="POST">
                                     <input id="myFilter" data-type="search" placeholder="Rechercher titre du film.." name="film">
                                     
-                        <input type="submit" data-inline="true" value="Validation">
+                                    <input type="submit" data-inline="true" value="Validation">
                                 </form>
                             </div> 
                         </li>
@@ -120,6 +120,8 @@
                                 <div data-role="panel" id="realisateur" data-display="realisateur" style="display:none"> 
                                     <form class="ui-filterable">
                                         <input id="myFilter" data-type="search" placeholder="Rechercher realisateur..">
+                                        
+                                        <input type="submit" data-inline="true" value="Validation">
                                     </form>
                                 </div> 
                         </li>

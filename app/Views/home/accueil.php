@@ -280,7 +280,10 @@
         <!--_______________________________script pour le menu___________________________-->
 
         <script src="<?= $this->assetUrl("js/scriptMenu.js"); ?>"></script>
+<script>
+    var Mike = 0;
 
+</script>
    <!--________________________ Traitement Pour la google Maps ________________________-->
         
     <script src="<?= $this->assetUrl("js/scriptMaps.js"); ?>"></script>

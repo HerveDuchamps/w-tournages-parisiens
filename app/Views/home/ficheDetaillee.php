@@ -1,7 +1,10 @@
 <?php $this->layout('layout', ['title' => 'FicheDetaillee']) ?>
 
 <?php $this->start('main_content') ?>
-
+        <main>
+            <div class="map" id="map"></div>
+        </main>
+       
         <p id="idfilm"></p>
         <p id="titre"></p>
         <p id="synopsis"></p>
@@ -20,8 +23,14 @@
       <?php if(isset($nomFilm)):  ?>  
 <script>
     var Mike = "<?= $nomFilm ?>"
-</script>
-<script src="<?= $this->assetUrl("js/scriptMovieDB.js"); ?>"></script>
+
+</script><!--________________________ Traitement Pour la google Maps ________________________-->
+        
+    <script src="<?= $this->assetUrl("js/scriptMaps.js"); ?>"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_pQO55smx8954HCzgkMR0HiZoJ-BCXWc&callback=initMap"
+    async defer></script>
+    <script src="<?= $this->assetUrl("js/scriptMovieDB.js"); ?>"></script>
     <?php endif; ?>
 
 

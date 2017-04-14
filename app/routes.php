@@ -8,6 +8,7 @@
 
 		//Api Google Maps
 		['GET|POST', '/api/lieu', 'Api#maps', 'api_maps'],
+		['POST', '/api/lieu/film', 'Api#mapTitre', 'map_titre'],
 
 		//Api Movie DB
 		['GET|POST', '/api/movie', 'Api#movieDB', 'api_movie'],
