@@ -111,9 +111,8 @@ footer {
 
 /*_________________________________________________Carousel et thumbnails________________________________________________*/
 
-.carousel{
-    padding-left: 10px;
-    padding-right: 10px;
+.mobile img{
+    max-width: none;
 }
 
 .carousel-indicators .active{
@@ -126,6 +125,10 @@ footer {
 
 .thumbnail{
     margin-bottom: 55px;
+}
+
+.item{
+   margin-bottom: 55px; 
 }
 
 /*_________________________________________________Fiche________________________________________________*/
