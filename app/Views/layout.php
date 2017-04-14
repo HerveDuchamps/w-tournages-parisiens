@@ -71,7 +71,7 @@
                         <li>
                             <a href="#" class="Autour_de_moi">Autour de moi</a>
                             <div data-role="panel" id="Autour_de_moi" data-display="autour" style="display:none"> 
-                                <form class="ui-filterable">
+                                <form class="ui-filterable" method="GET">
                                     <input id="myFilter" data-type="search" placeholder="Autour de moi">
                                 </form>
                                 
@@ -107,8 +107,10 @@
                         <li>
                             <a href="#" class="titre">Titre</a>                           
                             <div data-role="panel" id="titre" data-display="titre" style="display:none"> 
-                                <form class="ui-filterable">
-                                    <input id="myFilter" data-type="search" placeholder="Rechercher titre du film..">
+                                <form class="ui-filterable" action="<?= $this->url('fiche_detaillee'); ?>" method="GET">
+                                    <input id="myFilter" data-type="search" placeholder="Rechercher titre du film.." name="film">
+                                    
+                        <input type="submit" data-inline="true" value="Validation">
                                 </form>
                             </div> 
                         </li>
@@ -124,7 +126,6 @@
 
                         <li><a href="#" class="parcours">Parcours</a></li>
                        
-                        <input type="submit" data-inline="true" value="Validation">
                         <br/><br/>
                         <div class="clear"></div>
                     </ul>
