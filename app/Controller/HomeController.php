@@ -19,8 +19,8 @@ class HomeController extends Controller
 
 		public function fiche()
 	{
-		if(isset($_GET["film"]))
-			$this->show('home/ficheDetaillee',["nomFilm" => $_GET["film"]]);
+		if(isset($_POST["film"]))
+			$this->show('home/ficheDetaillee',["nomFilm" => $_POST["film"]]);
 		else
 			$this->show('home/ficheDetaillee');
 

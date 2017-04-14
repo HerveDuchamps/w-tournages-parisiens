@@ -9,9 +9,9 @@
 
         <title>Accueil</title>
        
-        <!--________________________ Liens <________________________--></________________________-->
+        <!--________________________ Liens <________________________-->
+
         <!-- Bootstrap CDN -->
-        
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <!-- Custom CSS-->
@@ -107,10 +107,10 @@
                         <li>
                             <a href="#" class="titre">Titre</a>                           
                             <div data-role="panel" id="titre" data-display="titre" style="display:none"> 
-                                <form class="ui-filterable" action="<?= $this->url('fiche_detaillee'); ?>" method="GET">
+                                <form class="ui-filterable" action="<?= $this->url('fiche_detaillee'); ?>" method="POST">
                                     <input id="myFilter" data-type="search" placeholder="Rechercher titre du film.." name="film">
                                     
-                        <input type="submit" data-inline="true" value="Validation">
+                                    <input type="submit" data-inline="true" value="Validation">
                                 </form>
                             </div> 
                         </li>
@@ -120,6 +120,8 @@
                                 <div data-role="panel" id="realisateur" data-display="realisateur" style="display:none"> 
                                     <form class="ui-filterable">
                                         <input id="myFilter" data-type="search" placeholder="Rechercher realisateur..">
+                                        
+                                        <input type="submit" data-inline="true" value="Validation">
                                     </form>
                                 </div> 
                         </li>
@@ -145,5 +147,10 @@
             </div>
         </footer>
 	</div>
+
+    <!--________________________ JQuery pour Bootstrap ________________________-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--________________________ Javascript pour Bootstrap ________________________-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

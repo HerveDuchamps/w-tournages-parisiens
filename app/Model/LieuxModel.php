@@ -6,5 +6,4 @@ use \W\Security\AuthentificationModel;
 
 class LieuxModel extends Model 
 {
-    
 }

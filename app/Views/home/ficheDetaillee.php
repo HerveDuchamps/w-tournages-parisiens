@@ -1,58 +1,38 @@
 <?php $this->layout('layout', ['title' => 'FicheDetaillee']) ?>
 
 <?php $this->start('main_content') ?>
+        <main>
+            <div class="map" id="map"></div>
+        </main>
+       
+        <p id="idfilm"></p>
+        <p id="titre"></p>
+        <p id="synopsis"></p>
+        <p id="punchline"></p>
+        <div>Genres : <p id="genres" style="display: inline;"></p></div></br>
+        <p id="langue"></p>
+        <p id="dateDeSortie"></p>
+        <p id="PhotoRealisateur"></p>
+        <p id="realisateur"></p>
+        <p id="acteurs"></p>
+        <p id="affiche"></p></br>
+        <p>Acteurs : </p></br>
+        <p id="photoActeurs"></p>
+        <P id="bandeAnnonce"></p>
 
-<div class="container">
-            <div class="row">
-
-                <!-- Titre du film-->
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="titre">
-                </div>
-
-                <!-- Affiche du film-->
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" id="affiche">
-                </div>
-                
-                <!-- Lien Youtube du film-->
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8" id="bandeAnnonce">
-                </div>
-
-                <!-- Synopsis -->
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="synopsis">
-                </div>
-
-                <!-- Photo du réalisateur -->
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="PhotoRealisateur">
-                </div>
-
-                <!-- Nom du réalisateur -->
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="realisateur">
-                </div>
-
-                 <!-- Punchline -->
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="punchline">
-                </div>
-
-                <!-- Genre -->
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="genres">
-                </div>
-
-                <!-- Langue -->
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="langue">
-                </div>
-
-                <!-- Date de sortie -->
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="dateDeSortie">
-                </div>
-
-            </div>
-        </div>
-
-<?php if(isset($nomFilm)):  ?>  
+      <?php if(isset($nomFilm)):  ?>  
 <script>
     var Mike = "<?= $nomFilm ?>"
-</script>
-<script src="<?= $this->assetUrl("js/scriptMovieDB.js"); ?>"></script>
+</script><!--________________________ Traitement Pour la google Maps ________________________-->
+        
+    <script src="<?= $this->assetUrl("js/scriptMaps.js"); ?>"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_pQO55smx8954HCzgkMR0HiZoJ-BCXWc&callback=initMap"
+    async defer></script>
+    <script src="<?= $this->assetUrl("js/scriptMovieDB.js"); ?>"></script>
     <?php endif; ?>
+
+
+
 
 <?php $this->stop('main_content') ?>
