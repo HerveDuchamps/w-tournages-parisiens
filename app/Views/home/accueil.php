@@ -194,6 +194,23 @@
                     </div>                    
                 <!-- Fin du carousel -->
                 </div>
+<<<<<<< HEAD
+            <!--Fin du container -->
+            </div>   
+            <!--Fin de la section-->
+        </section>
+
+        
+        <!--_______________________________script pour le menu___________________________-->
+
+        <script src="<?= $this->assetUrl("js/scriptMenu.js"); ?>"></script>
+<script>
+    var Mike = 0;
+
+</script>
+   <!--________________________ Traitement Pour la google Maps ________________________-->
+        
+=======
             <!-- Fin du row -->
             </div>
         <!-- Fin du container -->
@@ -205,6 +222,7 @@
 
     <!--________________________ Traitement Pour la google Maps ________________________-->
     
+>>>>>>> 8f023dfbae85e2f4232af2932c6cdac50777d72a
     <script src="<?= $this->assetUrl("js/scriptMaps.js"); ?>"></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_pQO55smx8954HCzgkMR0HiZoJ-BCXWc&callback=initMap"

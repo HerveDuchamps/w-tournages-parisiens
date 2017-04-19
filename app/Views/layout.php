@@ -96,6 +96,76 @@
                     <input type="text" name="titre" placeholder="Titre de film" class="form-control input-sm" id="titre">
                 </div>
 
+                <!-- slide menu-->
+                <nav id="slide-menu">
+                    <ul>
+                        <li>
+                            <a href="#" class="Autour_de_moi">Autour de moi</a>
+                            <div data-role="panel" id="Autour_de_moi" data-display="autour" style="display:none"> 
+                                <form class="ui-filterable" method="GET">
+                                    <input id="myFilter" data-type="search" placeholder="Autour de moi">
+                                </form>
+                                
+                            </div> 
+                        </li>
+                        <li>
+                            <a href="#" class="arrondissement">Arondissement</a>
+                            <div data-role="panel" id="arrondissement" data-display="arrondissement" style="display:none"> 
+                                <select name="arrondissement" id="arrondissement">     
+                                    <option value="75001">75001</option>
+                                    <option value="75002">75002</option>
+                                    <option value="75003">75003</option>
+                                    <option value="75004">75004</option>
+                                    <option value="75005">75005</option>
+                                    <option value="75006">75006</option>
+                                    <option value="75007">75007</option>
+                                    <option value="75008">75008</option>
+                                    <option value="75009">75009</option>
+                                    <option value="75010">75010</option>
+                                    <option value="75011">75011</option>
+                                    <option value="75012">75012</option>
+                                    <option value="75013">75013</option>
+                                    <option value="75014">75014</option>
+                                    <option value="75015">75015</option>
+                                    <option value="75016">75016</option>
+                                    <option value="75017">75017</option>
+                                    <option value="75018">75018</option>
+                                    <option value="75019">75019</option>
+                                    <option value="75020">75020</option>
+                                </select>
+                              </div>
+                        </li>
+                        <li>
+                            <a href="#" class="titre">Titre</a>                           
+                            <div data-role="panel" id="titre" data-display="titre" style="display:none"> 
+                                <form class="ui-filterable" action="<?= $this->url('fiche_detaillee'); ?>" method="POST">
+                                    <input id="myFilter" data-type="search" placeholder="Rechercher titre du film.." name="film">
+                                    
+                                    <input type="submit" data-inline="true" value="Validation">
+                                </form>
+                            </div> 
+                        </li>
+
+                        <li>
+                            <a href="#" class="realisateur">Realisateur</a>
+                                <div data-role="panel" id="realisateur" data-display="realisateur" style="display:none"> 
+                                    <form class="ui-filterable">
+                                        <input id="myFilter" data-type="search" placeholder="Rechercher realisateur..">
+                                        
+                                        <input type="submit" data-inline="true" value="Validation">
+                                    </form>
+                                </div> 
+                        </li>
+
+                        <li><a href="#" class="parcours">Parcours</a></li>
+                       
+                        <br/><br/>
+                        <div class="clear"></div>
+                    </ul>
+                </nav>
+            </div>
+
+
                 <div class="form-group">
                     <label for="realisateur">Entrez un nom de réalisateur</label>
                     <input type="text" name="realisateur" placeholder="Nom de réalisateur" class="form-control input-sm" id="realisateur">
