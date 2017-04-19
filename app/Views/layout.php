@@ -9,7 +9,7 @@
 
         <title>Accueil</title>
        
-        <!--________________________ Liens <________________________-->
+        <!--________________________ Liens ________________________-->
 
         <!-- Bootstrap CDN -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -20,13 +20,20 @@
         <!-- Favicon -->
        <link rel="icon" type="image/png" href="<?= $this->assetUrl('img/favicon.png') ?>"/>
 	   
-        
-
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!--________________________ JQuery pour Bootstrap ________________________-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!--________________________ Javascript pour Bootstrap ________________________-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <!--_______________________________script pour le menu___________________________-->
+
+        <script src="<?= $this->assetUrl("js/scriptMenu.js"); ?>"></script>
+
+
 
     </head>
 <body>
@@ -42,9 +49,8 @@
                     </a>
 
                     <!-- Bouton pour faire apparaître le formulaire --> 
-                    <button type="button" class="btn btn-default navbar-btn pull-right">
-                    <span class="glyphicon glyphicon-menu-hamburger menu-trigger"></span>
-                    </button>
+                    <!-- Standard button -->
+                    <button onclick="openNav()" type="button" class="btn btn-default navbar-btn pull-right">Recherche</button>
                 </div>
             </div>
     
@@ -61,78 +67,50 @@
             <li class="breadcrumb-item"><a href="#">Parcours</a></li>
         </ol>
 
-               <!--_______________________________Menu slide ________________________________________________-->
-
-            <div id="contente">
+        <!--_______________________________ Menu slide ________________________________________________-->
         
-                <!-- slide menu-->
-                <nav id="slide-menu">
-                    <ul>
-                        <li>
-                            <a href="#" class="Autour_de_moi">Autour de moi</a>
-                            <div data-role="panel" id="Autour_de_moi" data-display="autour" style="display:none"> 
-                                <form class="ui-filterable" method="GET">
-                                    <input id="myFilter" data-type="search" placeholder="Autour de moi">
-                                </form>
-                                
-                            </div> 
-                        </li>
-                        <li>
-                            <a href="#" class="arrondissement">Arondissement</a>
-                            <div data-role="panel" id="arrondissement" data-display="arrondissement" style="display:none"> 
-                                <select name="arrondissement" id="arrondissement">     
-                                    <option value="75001">75001</option>
-                                    <option value="75002">75002</option>
-                                    <option value="75003">75003</option>
-                                    <option value="75004">75004</option>
-                                    <option value="75005">75005</option>
-                                    <option value="75006">75006</option>
-                                    <option value="75007">75007</option>
-                                    <option value="75008">75008</option>
-                                    <option value="75009">75009</option>
-                                    <option value="75010">75010</option>
-                                    <option value="75011">75011</option>
-                                    <option value="75012">75012</option>
-                                    <option value="75013">75013</option>
-                                    <option value="75014">75014</option>
-                                    <option value="75015">75015</option>
-                                    <option value="75016">75016</option>
-                                    <option value="75017">75017</option>
-                                    <option value="75018">75018</option>
-                                    <option value="75019">75019</option>
-                                    <option value="75020">75020</option>
-                                </select>
-                              </div>
-                        </li>
-                        <li>
-                            <a href="#" class="titre">Titre</a>                           
-                            <div data-role="panel" id="titre" data-display="titre" style="display:none"> 
-                                <form class="ui-filterable" action="<?= $this->url('fiche_detaillee'); ?>" method="GET">
-                                    <input id="myFilter" data-type="search" placeholder="Rechercher titre du film.." name="film">
-                                    
-                        <input type="submit" data-inline="true" value="Validation">
-                                </form>
-                            </div> 
-                        </li>
+        <div id="mySidenav" class="sidenav">
+            
+        <!-- Début du formulaire -->
+            <form action="/ma-page-de-traitement" method="post">
 
-                        <li>
-                            <a href="#" class="realisateur">Realisateur</a>
-                                <div data-role="panel" id="realisateur" data-display="realisateur" style="display:none"> 
-                                    <form class="ui-filterable">
-                                        <input id="myFilter" data-type="search" placeholder="Rechercher realisateur..">
-                                    </form>
-                                </div> 
-                        </li>
+                <a href="javascript:void(0)" class="glyphicon glyphicon-remove" onclick="closeNav()"></a>
 
-                        <li><a href="#" class="parcours">Parcours</a></li>
-                       
-                        <br/><br/>
-                        <div class="clear"></div>
-                    </ul>
-                </nav>
-            </div>
+                <div class="button">
+                    <button type="button" class="btn btn btn-info btn-sm btn-block"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Autour de moi</button>
+                </div>
 
-        <!--____________________________Fin du slide menu________________________________-->
+                <div class="button">
+                    <button type="button" class="btn btn btn-info btn-sm btn-block"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Parcours</button>
+                </div>
+
+                <hr/>
+        
+                <div class="form-group">
+                    <label for="cp">Entrez un code postal</label>
+                    <input type="number" value="75001" min="75001" max="75020" class="form-control input-sm" id="cp">
+                </div>
+                    
+                <div class="form-group">
+                    <label for="titre">Entrez un titre de film</label>
+                    <input type="text" name="titre" placeholder="Titre de film" class="form-control input-sm" id="titre">
+                </div>
+
+                <div class="form-group">
+                    <label for="realisateur">Entrez un nom de réalisateur</label>
+                    <input type="text" name="realisateur" placeholder="Nom de réalisateur" class="form-control input-sm" id="realisateur">
+                </div>
+
+                <div class="button">
+                    <button type="button" class="btn btn-primary btn-sm btn-block">Envoyer</button>
+                </div>
+                    
+            <!-- Fin du formulaire -->
+            </form>
+        <!-- Fin du sidenav -->
+        </div>
+
+        <!--____________________________ Fin Menu slide ________________________________-->
 
 		<section>
 			<?= $this->section('main_content') ?>
@@ -146,9 +124,7 @@
         </footer>
 	</div>
 
-    <!--________________________ JQuery pour Bootstrap ________________________-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!--________________________ Javascript pour Bootstrap ________________________-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    
 </body>
 </html>

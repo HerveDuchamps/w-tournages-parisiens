@@ -201,9 +201,7 @@
     <!-- Fin de la section -->
     </section>
     
-    <!--_______________________________script pour le menu___________________________-->
 
-    <script src="<?= $this->assetUrl("js/scriptMenu.js"); ?>"></script>
 
     <!--________________________ Traitement Pour la google Maps ________________________-->
     
